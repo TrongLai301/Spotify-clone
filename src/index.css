@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --secondary_bg: #121212;
+  --third_bg: #242424;
+
+  --text-not_hover: #b3b3b3;
+  --text_hover: #ffffff;
+
+  --text_second: #f1f1f1;
+  --bg_second_hover: #2a2a2a;
+  --bg_active:#000000;
+
+  --button-not_hover: #232323;
+  --button_hover: #191919;
+
+  --max-width_sidebar: 420px;
+  --min-width_sidebar: 255px;
+
+  --min-heigth_sidebar:420px;
+}
+
+
+
+* {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+.secondary_bg {
+  background-color: var(--secondary_bg);
+}
+
+.third_bg {
+  background-color: var(--third_bg);
+}
+
+.hover-sidebar,
+.element-sidebar {
+  color: var(--text-not_hover);
+  transition: 0.5s ease-in-out;
+}
+
+.hover-sidebar:hover {
+  color: var(--text_hover);
+  transition: 0.5s ease-in-out;
+}
+
+.hover-button {
+  background-color: var(--button-not_hover);
+  transition: 0.3s ease-in-out;
+}
+
+.max-width-sidebar {
+  max-width: var(--max-width_sidebar);
+}
+
+.min-width-sidebar {
+  min-width: var(--min-width_sidebar);
+}
+.min-height-sidebar{
+  min-height: var(--min-heigth_sidebar);
+}
+
+.span-chosse {
+  color: var(--text_second);
+}
+
+.hover-button:hover,
+.plus-arrow-hover:hover {
+  background-color: var(--bg_second_hover);
+  transition: 0.3s ease-in-out;
+}
+.enlarge:hover .enlarge-child{
+  color: var(--text_hover);
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+}
+
+.plus-arrow-hover:active{
+  background-color: var(--bg_active);
+  transition: 0.3s ease-in-out;
+}
