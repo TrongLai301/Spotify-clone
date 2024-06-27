@@ -16,10 +16,10 @@
   --button-not_hover: #232323;
   --button_hover: #191919;
 
-  --max-width_sidebar: 420px;
-  --min-width_sidebar: 255px;
+  --width-420_sidebar: 420px;
+  --width-255_sidebar: 255px;
 
-  --min-heigth_sidebar:420px;
+  --heigth-420_sidebar:420px;
 }
 
 
@@ -64,14 +64,14 @@ body {
 }
 
 .max-width-sidebar {
-  max-width: var(--max-width_sidebar);
+  max-width: var(--width-420_sidebar);
 }
 
 .min-width-sidebar {
-  min-width: var(--min-width_sidebar);
+  min-width: var(--width-420_sidebar);
 }
 .min-height-sidebar{
-  min-height: var(--min-heigth_sidebar);
+  min-height: var(--heigth-420_sidebar);
 }
 
 .span-chosse {

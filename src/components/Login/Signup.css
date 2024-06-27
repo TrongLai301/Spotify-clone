@@ -1,0 +1,51 @@
+:root {
+    --secondary_bg: #121212;
+    --third_bg: #242424;
+    --color-button:#1ed760;
+  
+    --text-not_hover: #b3b3b3;
+    --text_hover: #ffffff;
+  
+    --text_second: #f1f1f1;
+    --bg_second_hover: #2a2a2a;
+    --bg_active:#000000;
+  
+    --button-not_hover: #232323;
+    --button_hover: #191919;
+  
+    --width-420_sidebar: 420px;
+    --width-255_sidebar: 255px;
+  
+    --heigth-420_sidebar:420px;
+  }
+
+  body.signup-page{
+    background-color: var(--secondary_bg) !important;
+  }
+ .text-header{
+    font-size: 50px;
+ }
+ .space-text{
+    letter-spacing: -3px;
+    line-height: 65px;
+ }
+ .inline-full{
+    inline-size: 100%;
+ }
+ .m-bl-st{
+    margin-block-start: 20px;
+ }
+
+ .bg-button{
+    background-color: var(--color-button);
+ }
+ .hr::before{
+   content: " ";
+   height: 1px;
+   background-color: var(--essential-subdued, #878787);
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 0px;
+   right: 0px;
+ }

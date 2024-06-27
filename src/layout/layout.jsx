@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     return (
         <div className=" flex gap-2 p-2">
             <Sidebar />
-            <div className="w-3/4 border border-s-white">
+            <div className="w-3/4 secondary_bg rounded-lg">
                 {children}
             </div>
             <Aside />

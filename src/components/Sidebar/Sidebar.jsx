@@ -12,7 +12,7 @@ import Signup from "./Signup";
 const Sidebar = () => {
 
     return (
-        <div className="w-1/4 min-width-sidebar max-width-sidebar">
+        <div className="w-1/4 min-width-sidebar">
             <nav className="flex flex-col gap-2">
                 <div className="secondary_bg px-3 py-2 rounded-lg">
                     <ul>
