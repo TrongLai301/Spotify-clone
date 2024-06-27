@@ -22,6 +22,9 @@
   body.signup-page{
     background-color: var(--secondary_bg) !important;
   }
+  .w-45-pc{
+   width: 45%;
+  }
  .text-header{
     font-size: 50px;
  }
@@ -48,4 +51,18 @@
    top: 50%;
    left: 0px;
    right: 0px;
+ }
+
+ .input-border{
+   border-radius: 6px;
+   border: 1px solid rgb(97, 97, 97);
+   transition: 0.3s ease-in-out;
+ }
+ .input-border:hover{
+   border-color: rgb(201, 198, 198);
+   transition: 0.3s ease-in-out;
+ }
+ .input-border:focus{
+   border-color: rgb(201, 198, 198);
+   transition: 0.3s ease-in-out;
  }

@@ -5,6 +5,7 @@
 :root {
   --secondary_bg: #121212;
   --third_bg: #242424;
+  --hr_bg:#b3b3b3;
 
   --text-not_hover: #b3b3b3;
   --text_hover: #ffffff;
@@ -37,6 +38,7 @@ body {
   background-color: #000;
   color: #fff;
   scroll-behavior: smooth;
+  min-height: 960px;
 }
 
 .secondary_bg {
@@ -92,4 +94,10 @@ body {
 .plus-arrow-hover:active{
   background-color: var(--bg_active);
   transition: 0.3s ease-in-out;
+}
+.hr_bg{
+  border-color: var(--hr_bg);
+}
+.min-h-960{
+  min-height: 960px;
 }

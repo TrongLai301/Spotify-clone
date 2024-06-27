@@ -22,26 +22,37 @@ export default function Signup() {
             <section className='flex justify-center w-full pb-0 '>
                 <div className='px-8 box-content signup-form'>
                     <header className='mb-10 '>
-                        <h1 className=' font-bold text-center text-header space-text'>Sign up to start listening  </h1>
+                        <h1 className=' font-bold text-center text-header space-text'>Sign up to start listening</h1>
                     </header>
                     <form action="">
                         <div className='mb-2'>
                             <label htmlFor="email" className='font-bold text-base'>Email address</label>
                         </div>
-                        <div>
-                            <input type="text" id="email" className="inline-full py-3 px-4 rounded-sm text-base secondary_bg border-gray-500 border" placeholder='name@domain.com' />
+                        <div className='input-border '>
+                            <input type="text" id="email" className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
                         </div>
                         <button className='m-bl-st inline-full h-12 '>
-                            <div className='bg-button rounded-full py-2 px-8 font-bold text-black'>
+                            <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
                                 Next
                             </div>
                         </button>
                     </form>
-                    <div>
-                        <div className='hr-before'>
-                            <span>
+                    <div className='mt-6'>
+                        {/* Chưa phát triển */}
+                        {/* <div className='flex justify-between items-center'>
+                            <hr className='w-45-pc'/>
+                            <span className='text-sm'>
                                 or
                             </span>
+                            <hr className='w-45-pc'/>
+                        </div>
+                        <div>
+
+                        </div> */}
+                        <hr className='hr_bg mb-6'/>
+                        <div className='text-center'>
+                            <span className=''>
+                                <span className='element-sidebar'>Already have an account?</span> <a className=' underline decoration-2 cursor-pointer'>Log in here</a>.</span>
                         </div>
                     </div>
                 </div>

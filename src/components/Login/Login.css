@@ -1,5 +1,31 @@
+:root {
+    --secondary_bg: #121212;
+    --third_bg: #242424;
+    --hr_bg: #b3b3b3;
 
+    --text-not_hover: #b3b3b3;
+    --text_hover: #ffffff;
 
-body{
-    background-color: var();
+    --text_second: #f1f1f1;
+    --bg_second_hover: #2a2a2a;
+    --bg_active: #000000;
+
+    --button-not_hover: #232323;
+    --button_hover: #191919;
+
+    --width-420_sidebar: 420px;
+    --width-255_sidebar: 255px;
+
+    --heigth-420_sidebar: 420px;
+}
+
+body.login-page {
+    background: linear-gradient( #2a2a2a, #020202) !important;
+}
+
+.div-form{
+    max-width: 734px;
+    width: 100%;
+    box-shadow: 0px 0px 3px 0px var(--third_bg);
+    border-radius: 12px;
 }
