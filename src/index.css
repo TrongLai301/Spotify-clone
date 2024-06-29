@@ -7,6 +7,8 @@
   --third_bg: #242424;
   --hr_bg:#b3b3b3;
 
+  --button_bg-1:#0a0a0a;
+
   --text-not_hover: #b3b3b3;
   --text_hover: #ffffff;
 
@@ -21,6 +23,9 @@
   --width-255_sidebar: 255px;
 
   --heigth-420_sidebar:420px;
+
+  --animation-02: 0.2s ease-in-out;
+  --animation-03: 0.3s ease-in-out;
 }
 
 
@@ -55,13 +60,31 @@ body {
   transition: 0.5s ease-in-out;
 }
 
+.hover-scale:hover{
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+.hover-text-white:hover .hover-text-white-span{
+  color: var(--text_second);
+  transition: 0.2s ease-in-out;
+}
+
+
 .hover-sidebar:hover {
   color: var(--text_hover);
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .hover-button {
   background-color: var(--button-not_hover);
+  transition: 0.3s ease-in-out;
+}
+.button-bg-1{
+  background-color: var(--button_bg-1);
+  transition: var(--animation-03);
+}
+.button-profile:hover{
+  background-color: var(--bg_second_hover);
   transition: 0.3s ease-in-out;
 }
 

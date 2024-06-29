@@ -1,68 +1,97 @@
 :root {
-    --secondary_bg: #121212;
-    --third_bg: #242424;
-    --color-button:#1ed760;
-  
-    --text-not_hover: #b3b3b3;
-    --text_hover: #ffffff;
-  
-    --text_second: #f1f1f1;
-    --bg_second_hover: #2a2a2a;
-    --bg_active:#000000;
-  
-    --button-not_hover: #232323;
-    --button_hover: #191919;
-  
-    --width-420_sidebar: 420px;
-    --width-255_sidebar: 255px;
-  
-    --heigth-420_sidebar:420px;
-  }
+  --secondary_bg: #121212;
+  --third_bg: #242424;
+  --color-button: #1ed760;
 
-  body.signup-page{
-    background-color: var(--secondary_bg) !important;
-  }
-  .w-45-pc{
-   width: 45%;
-  }
- .text-header{
-    font-size: 50px;
- }
- .space-text{
-    letter-spacing: -3px;
-    line-height: 65px;
- }
- .inline-full{
-    inline-size: 100%;
- }
- .m-bl-st{
-    margin-block-start: 20px;
- }
+  --text-not_hover: #b3b3b3;
+  --text_hover: #ffffff;
 
- .bg-button{
-    background-color: var(--color-button);
- }
- .hr::before{
-   content: " ";
-   height: 1px;
-   background-color: var(--essential-subdued, #878787);
-   display: block;
-   position: absolute;
-   top: 50%;
-   left: 0px;
-   right: 0px;
- }
+  --text_second: #f1f1f1;
+  --bg_second_hover: #2a2a2a;
+  --bg_active: #000000;
 
- .input-border{
-   border-radius: 6px;
-   border: 1px solid rgb(97, 97, 97);
-   transition: 0.3s ease-in-out;
- }
- .input-border:hover{
-   border-color: rgb(201, 198, 198);
-   transition: 0.3s ease-in-out;
- }
- .input-border:focus{
-   border-color: rgb(201, 198, 198);
-   transition: 0.3s ease-in-out;
- }
+  --button-not_hover: #232323;
+  --button_hover: #191919;
+
+  --width-420_sidebar: 420px;
+  --width-255_sidebar: 255px;
+
+  --heigth-420_sidebar: 420px;
+  --step: #1ed760;
+  --step-non: #727272;
+}
+
+body.signup-page,
+.signup-page {
+  background-color: var(--secondary_bg) !important;
+}
+
+.step {
+  justify-content: center !important;
+}
+
+.step>span {
+  background-color: var(--step-non);
+}
+
+.step>span,
+.step>span>span {
+  height: 2px !important;
+}
+
+.step>span>span {
+  background-color: var(--step);
+}
+
+
+.w-45-pc {
+  width: 45%;
+}
+
+.text-header {
+  font-size: 50px;
+}
+
+.space-text {
+  letter-spacing: -3px;
+  line-height: 65px;
+}
+
+.inline-full {
+  inline-size: 100%;
+}
+
+.m-bl-st {
+  margin-block-start: 20px;
+}
+
+.bg-button {
+  background-color: var(--color-button);
+}
+
+.hr::before {
+  content: " ";
+  height: 1px;
+  background-color: var(--essential-subdued, #878787);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+}
+
+.input-border {
+  border-radius: 6px;
+  border: 1px solid rgb(97, 97, 97);
+  transition: 0.3s ease-in-out;
+}
+
+.input-border:hover {
+  border-color: rgb(201, 198, 198);
+  transition: 0.3s ease-in-out;
+}
+
+.input-border:focus {
+  border-color: rgb(201, 198, 198);
+  transition: 0.3s ease-in-out;
+}

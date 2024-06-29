@@ -1,0 +1,56 @@
+:root {
+  --secondary_bg: #121212;
+  --third_bg: #242424;
+  --hr_bg: #b3b3b3;
+
+  --button_bg-1: #0a0a0a;
+
+  --text-not_hover: #b3b3b3;
+  --text_hover: #ffffff;
+  --text_second: #f1f1f1;
+  --text_third: #cacaca;
+  --bg_second_hover: #2a2a2a;
+  --bg_active: #000000;
+
+  --bg_popup: #282828;
+  --bg_li: #3e3e3e;
+
+  --button-not_hover: #232323;
+  --button_hover: #191919;
+
+  --width-420_sidebar: 420px;
+  --width-255_sidebar: 255px;
+
+  --heigth-420_sidebar: 420px;
+}
+
+.bg-popup-profile {
+  background-color: var(--bg_popup);
+}
+
+.text-popup {
+  color: var(--text_third);
+}
+
+
+
+.white-icon-hover:hover .child {
+  color: var(--text_hover);
+  font-size: 22px;
+  transition: 0.2s ease-in-out;
+}
+
+.popup {
+  border-radius: 6px;
+  width: 196px;
+  right: 45px;
+  top: 75px;
+}
+
+.hover-li-profile:hover .child-text-profile {
+  color: var(--text_hover);
+  transition: 0.3s ease-in-out;
+}
+.hover-li-profile:hover {
+  background-color: var(--bg_li);
+}

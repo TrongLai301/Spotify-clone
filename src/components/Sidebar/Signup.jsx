@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Signup.css";
 const Signup = () => {
     return (
@@ -9,9 +10,12 @@ const Signup = () => {
                     ads. No credit card needed
                 </p>
             </div>
-            <button className="hover:bg-slate-200 rounded-full text-black mt-2 mb-2 px-8 text-lg  py-2 bg-white font-semibold">
-                Sign Up free
-            </button>
+            <Link to={'/login'}>
+                <button className="hover:bg-slate-200 rounded-full text-black mt-2 mb-2 px-8 text-lg  py-2 bg-white font-semibold">
+                    Sign Up free
+                </button>
+            </Link>
+
         </div>
     );
 };

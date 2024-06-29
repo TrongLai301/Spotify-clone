@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { BsSpotify } from "react-icons/bs";
 import "./Signup.css"
 import "../../assets/CSS/responsive.css"
+import { Link } from 'react-router-dom';
+import { Button, MobileStepper } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 
 export default function Signup() {
@@ -11,6 +14,19 @@ export default function Signup() {
             document.body.className = '';
         };
     }, []);
+    const theme = useTheme();
+    const [activeStep, setActiveStep] = React.useState(0);
+
+    const handleNext = (e) => {
+        e.preventDefault()
+        if (activeStep < 3) {
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
 
     return (
         <div className=''>
@@ -19,6 +35,16 @@ export default function Signup() {
                     <BsSpotify className='min-w-11 min-h-11' />
                 </div>
             </header>
+            <div className='flex items-center justify-center'>
+                <MobileStepper
+                    className='signup-page step'
+                    variant="progress"
+                    steps={4}
+                    position="static"
+                    activeStep={activeStep}
+                    sx={{ maxWidth: 800, flexGrow: 1 }}
+                />
+            </div>
             <section className='flex justify-center w-full pb-0 '>
                 <div className='px-8 box-content signup-form'>
                     <header className='mb-10 '>
@@ -31,7 +57,7 @@ export default function Signup() {
                         <div className='input-border '>
                             <input type="text" id="email" className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
                         </div>
-                        <button className='m-bl-st inline-full h-12 '>
+                        <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
                             <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
                                 Next
                             </div>
@@ -49,10 +75,10 @@ export default function Signup() {
                         <div>
 
                         </div> */}
-                        <hr className='hr_bg mb-6'/>
+                        <hr className='hr_bg mb-6' />
                         <div className='text-center'>
                             <span className=''>
-                                <span className='element-sidebar'>Already have an account?</span> <a className=' underline decoration-2 cursor-pointer'>Log in here</a>.</span>
+                                <span className='element-sidebar'>Already have an account?</span> <Link to={'/login'} className='hover-link underline decoration-2 cursor-pointer'>Log in here</Link>.</span>
                         </div>
                     </div>
                 </div>
