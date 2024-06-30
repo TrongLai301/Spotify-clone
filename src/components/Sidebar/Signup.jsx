@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Signup.css";
 const Signup = () => {
     return (
-        <div className="fixed bottom-0 signup_bar text-sm items-center flex px-4 py-2 justify-between">
+        <div className="fixed bottom-0 signup_bar text-sm items-center flex px-4 py-2 justify-between mb-2 rounded-sm">
             <div>
                 <p className=" uppercase">preview on spotify</p>
                 <p className="font-bold">

@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsSpotify } from "react-icons/bs";
 import "./Signup.css"
 import "../../assets/CSS/responsive.css"
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import { Button, MobileStepper } from '@mui/material';
 import { useTheme } from '@emotion/react';
-
+import Step1 from './StepSignup/Step1';
+import FormSignUp from './Form/FormSignUp';
+import Step2 from './StepSignup/Step2';
 
 export default function Signup() {
+
     useEffect(() => {
         document.body.className = 'signup-page';
         return () => {
@@ -19,7 +22,7 @@ export default function Signup() {
 
     const handleNext = (e) => {
         e.preventDefault()
-        if (activeStep < 3) {
+        if (activeStep < 2) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
         }
     };
@@ -27,6 +30,10 @@ export default function Signup() {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
+    const [input, setInput] = useState();
+    const onChangeEmail = (e) => {
+        setInput(e.target.value)
+    }
 
     return (
         <div className=''>
@@ -37,35 +44,39 @@ export default function Signup() {
             </header>
             <div className='flex items-center justify-center'>
                 <MobileStepper
-                    className='signup-page step'
+                    className={`signup-page step  ${activeStep == 0 ? 'step-0-clr' : 'step-bg-1'}`}
                     variant="progress"
-                    steps={4}
+                    steps={3}
                     position="static"
                     activeStep={activeStep}
-                    sx={{ maxWidth: 800, flexGrow: 1 }}
+                    sx={{ maxWidth: 850, flexGrow: 1 }}
                 />
             </div>
-            <section className='flex justify-center w-full pb-0 '>
-                <div className='px-8 box-content signup-form'>
-                    <header className='mb-10 '>
-                        <h1 className=' font-bold text-center text-header space-text'>Sign up to start listening</h1>
-                    </header>
-                    <form action="">
-                        <div className='mb-2'>
-                            <label htmlFor="email" className='font-bold text-base'>Email address</label>
-                        </div>
-                        <div className='input-border '>
-                            <input type="text" id="email" className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
-                        </div>
-                        <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
-                            <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
-                                Next
+            {activeStep == 0 &&
+                <section className='flex justify-center w-full pb-0 '>
+                    <div className='px-8 box-content signup-form-1'>
+                        <header className='mb-10 '>
+                            <h1 className=' font-bold text-center text-header space-text'>Sign up to start listening</h1>
+                        </header>
+                        <div>
+                            <div>
+                                <div className='mb-2'>
+                                    <label htmlFor="email" className='font-bold text-base'>Email address</label>
+                                </div>
+                                <div className='input-border '>
+                                    <input type="text" id="email" onChange={(e) => setInput(e.target.value)} className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
+                                </div>
                             </div>
-                        </button>
-                    </form>
-                    <div className='mt-6'>
-                        {/* Chưa phát triển */}
-                        {/* <div className='flex justify-between items-center'>
+                            <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
+                                <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
+                                    Next
+                                </div>
+                            </button>
+                        </div>
+
+                        <div className='mt-6'>
+                            {/* Chưa phát triển */}
+                            {/* <div className='flex justify-between items-center'>
                             <hr className='w-45-pc'/>
                             <span className='text-sm'>
                                 or
@@ -75,14 +86,43 @@ export default function Signup() {
                         <div>
 
                         </div> */}
-                        <hr className='hr_bg mb-6' />
-                        <div className='text-center'>
-                            <span className=''>
-                                <span className='element-sidebar'>Already have an account?</span> <Link to={'/login'} className='hover-link underline decoration-2 cursor-pointer'>Log in here</Link>.</span>
+                            <hr className='hr_bg mb-6' />
+                            <div className='text-center'>
+                                <span className=''>
+                                    <span className='element-sidebar'>Already have an account?</span> <Link to={'/login'} className='hover-link underline decoration-2 cursor-pointer'>Log in here</Link>.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            }
+            {activeStep == 1 &&
+                <div className='flex justify-center flex-col'>
+                    <Step1 handleBackStep={handleBack} />
+                    <div className='w-full flex justify-center'>
+                        <div className=' signup-form-1'>
+                            <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
+                                <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
+                                    Next
+                                </div>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </section>
+            }
+             {activeStep == 2 &&
+                <div className='flex justify-center flex-col'>
+                    <Step2 handleBackStep={handleBack} />
+                    <div className='w-full flex justify-center mt-6'>
+                        <div className=' signup-form-1'>
+                            <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
+                                <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
+                                    Next
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     )
 }

@@ -1,5 +1,12 @@
 @media (min-width:480px) {
-    .signup-form{
+    .signup-form-1{
         width: 324px;
+    }
+    .signup-form-2{
+        width: 1px;
+    }
+
+    .step-w{
+        width: 436px;
     }
 }

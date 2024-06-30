@@ -1,0 +1,58 @@
+:root {
+    --secondary_bg: #121212;
+    --third_bg: #242424;
+    --hr_bg: #b3b3b3;
+
+    --button_bg-1: #0a0a0a;
+
+    --text-not_hover: #b3b3b3;
+    --text_hover: #ffffff;
+    --text_second: #f1f1f1;
+    --text_third: #cacaca;
+    --bg_second_hover: #2a2a2a;
+    --bg_active: #000000;
+
+    --bg_popup: #282828;
+    --bg_li: #3e3e3e;
+    --bg_hover: #1dba55;
+    --bg-choose:#1ed760;
+
+    --button-not_hover: #232323;
+    --button_hover: #191919;
+
+    --width-420_sidebar: 420px;
+    --width-255_sidebar: 255px;
+
+    --heigth-420_sidebar: 420px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.w-arrstep {
+    width: 55px;
+    height: 55px;
+}
+
+input[type='radio'] {
+    accent-color: green
+}
+
+.hover-input {
+    accent-color: black;
+}
+
+.hover-radio:hover .hover-input {
+    border-color: red;
+}
+
+.bg-radio {
+    color: var(--bg_li);
+}
+.hover-radio:hover .bg-radio{
+    color: var(--bg_hover);
+}
+.bg-choose{
+    color: var(--bg-choose);
+}

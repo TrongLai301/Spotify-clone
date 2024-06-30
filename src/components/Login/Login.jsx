@@ -62,7 +62,7 @@ export default function Login() {
           {/* Phát triển sau (Login gg)*/}
           {/* Phát triển sau (Login gg)*/}
           <hr className='my-8 mx-24 hr_bg' />
-          <form onSubmit={formData.handleSubmit} className='signup-form m-auto'>
+          <form onSubmit={formData.handleSubmit} className='signup-form-1 m-auto'>
             <div className='mb-2'>
               <label htmlFor="email" className='font-bold text-base'>Email</label>
             </div>

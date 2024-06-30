@@ -22,15 +22,16 @@
 }
 
 body.signup-page,
-.signup-page {
+.signup-page, .step-0-clr>span {
   background-color: var(--secondary_bg) !important;
 }
+
 
 .step {
   justify-content: center !important;
 }
 
-.step>span {
+.step-bg-1>span {
   background-color: var(--step-non);
 }
 
@@ -67,17 +68,6 @@ body.signup-page,
 
 .bg-button {
   background-color: var(--color-button);
-}
-
-.hr::before {
-  content: " ";
-  height: 1px;
-  background-color: var(--essential-subdued, #878787);
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  right: 0px;
 }
 
 .input-border {

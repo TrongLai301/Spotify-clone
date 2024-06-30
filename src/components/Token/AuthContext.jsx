@@ -13,7 +13,6 @@ export default function AuthContext({ children }) {
 
 
 export async function Logout(navigate, user) {
-    const url = `${api}logout`;
     console.log(user.accessToken)
     if (user) {
         // Gửi yêu cầu đăng xuất đến server
@@ -26,7 +25,7 @@ export async function Logout(navigate, user) {
             console.error(e); // In lỗi ra console
         });
         localStorage.removeItem("currentUser"); 
-        navigate("/login"); 
+        navigate("/"); 
     } else {
         navigate("/login"); 
     }
