@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { BsSpotify } from "react-icons/bs";
 import "./Signup.css"
 import "../../assets/CSS/responsive.css"
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { Button, MobileStepper } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Step1 from './StepSignup/Step1';
 import FormSignUp from './Form/FormSignUp';
 import Step2 from './StepSignup/Step2';
+import { useFormik } from 'formik';
+import axios from 'axios';
 
 export default function Signup() {
+    const api = import.meta.env.VITE_API_LOCAL_BACKEND;
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.className = 'signup-page';
@@ -20,6 +24,17 @@ export default function Signup() {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
 
+
+
+    const [formData, setFormData] = useState({
+        name: '',
+        password: '',
+        email: '',
+        gender: {
+            id: ''
+        },
+        birthday: ''
+    })
     const handleNext = (e) => {
         e.preventDefault()
         if (activeStep < 2) {
@@ -32,8 +47,37 @@ export default function Signup() {
     };
     const [input, setInput] = useState();
     const onChangeEmail = (e) => {
-        setInput(e.target.value)
+        setInput(e.target.value);
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            email: e.target.value
+        }))
     }
+    const formSignup = useFormik({
+        initialValues: {
+            userName: '',
+            password: '',
+            email: '',
+            gender: {
+                id: ''
+            },
+            birthday: ''
+        },
+        onSubmit: async (values) => {
+            try {
+                await axios.post(`${api}register`, values).then((res) => {
+                    navigate('/login')
+                })
+            } catch {
+                console.log('err')
+            }
+        }
+    })
+    useEffect(() => {
+        formSignup.setValues(formData);
+      }, [formData]);
+
+
 
     return (
         <div className=''>
@@ -64,7 +108,7 @@ export default function Signup() {
                                     <label htmlFor="email" className='font-bold text-base'>Email address</label>
                                 </div>
                                 <div className='input-border '>
-                                    <input type="text" id="email" onChange={(e) => setInput(e.target.value)} className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
+                                    <input type="text" id="email" onChange={onChangeEmail} className="inline-full py-3 px-4 text-base secondary_bg" placeholder='name@domain.com' />
                                 </div>
                             </div>
                             <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
@@ -97,7 +141,7 @@ export default function Signup() {
             }
             {activeStep == 1 &&
                 <div className='flex justify-center flex-col'>
-                    <Step1 handleBackStep={handleBack} />
+                    <Step1 handleBackStep={handleBack} setFormData={setFormData} />
                     <div className='w-full flex justify-center'>
                         <div className=' signup-form-1'>
                             <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
@@ -109,18 +153,22 @@ export default function Signup() {
                     </div>
                 </div>
             }
-             {activeStep == 2 &&
+            {activeStep == 2 &&
                 <div className='flex justify-center flex-col'>
-                    <Step2 handleBackStep={handleBack} />
+                    <Step2 handleBackStep={handleBack} setFormData={setFormData} />
                     <div className='w-full flex justify-center mt-6'>
                         <div className=' signup-form-1'>
-                            <button onClick={handleNext} className='m-bl-st inline-full h-12 '>
-                                <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
-                                    Next
-                                </div>
-                            </button>
+                            <form onSubmit={formSignup.handleSubmit}>
+                                <button type='submit' className='m-bl-st inline-full h-12 '>
+                                    <div className='bg-button rounded-full hover:bg-green-500 py-2 px-8 font-bold text-black'>
+                                        Next
+                                    </div>
+                                </button>
+                            </form>
+
                         </div>
                     </div>
+
                 </div>
             }
         </div>

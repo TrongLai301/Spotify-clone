@@ -22,8 +22,8 @@ export default function PopupProfile({ open }) {
                     <span className='text-sm text-popup font-bold child-text-profile'>Settings</span>
                 </li>
                 <hr className='hr_bg'/>
-                <li className=' rounded-md cursor-pointer hover-li-profile py-3 flex items-center  h-10 pl-3 pr-2'>
-                    <button onClick={() => { Logout(navigate, currentUser) }}>
+                <li  onClick={() => { Logout(navigate, currentUser) }} className=' rounded-md cursor-pointer hover-li-profile py-3 flex items-center  h-10 pl-3 pr-2'>
+                    <button>
                         <span className='text-sm text-popup font-bold child-text-profile'>Log out</span>
                     </button>
                 </li>

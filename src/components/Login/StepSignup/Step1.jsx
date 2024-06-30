@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { IoIosArrowBack } from "react-icons/io";
 import FormSignUp from '../Form/FormSignUp';
 import { FaEye } from "react-icons/fa";
@@ -6,7 +6,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaRegCircle } from "react-icons/fa";
 import "./Step.css"
-export default function Step1({email , handleBackStep }) {
+export default function Step1({ handleBackStep ,setFormData}) {
     const [hasLetter, setHasLetter] = useState(false);
     const [input, setInput] = useState(false);
     const [hasNumberOrSpecial, setHasNumberOrSpecial] = useState(false);
@@ -20,6 +20,10 @@ export default function Step1({email , handleBackStep }) {
         setHasLetter(/[a-zA-Z]/.test(e.target.value));
         setHasNumberOrSpecial(/.|[0-9]/.test(e.target.value));
         setHasTenCharacters(e.target.value.length >= 10);
+        setFormData(prevFormData =>({
+            ...prevFormData,
+            password: e.target.value
+        }))
     };
     return (
         <div className='flex justify-center w-full pb-0'>

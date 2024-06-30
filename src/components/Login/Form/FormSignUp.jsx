@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-export default function FormSignUp({ number }) {
-    
+export default function FormSignUp({formData}) {
+    console.log(formData);
     return null
 }
