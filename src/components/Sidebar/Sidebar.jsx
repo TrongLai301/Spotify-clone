@@ -33,7 +33,7 @@ const Sidebar = () => {
                             </a>
                         </li>
                         <li className="py-1 px-3">
-                            <a href="#" className={`flex items-center h-10 gap-5 hover-sidebar`} >
+                            <a href="/" className={`flex items-center h-10 gap-5 hover-sidebar`} >
                                 <GoHomeFill className="min-w-7 min-h-7 " />
                                 <span className="font-bold whitespace-nowrap">Home</span>
                             </a>

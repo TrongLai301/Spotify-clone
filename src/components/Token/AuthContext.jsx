@@ -13,7 +13,6 @@ export default function AuthContext({ children }) {
 
 
 export async function Logout(navigate, user) {
-    console.log(user.accessToken)
     if (user) {
         // Gửi yêu cầu đăng xuất đến server
          axios.post(`${api}logout`, {}, {

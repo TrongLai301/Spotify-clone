@@ -11,7 +11,6 @@ export default function Login() {
   const api = import.meta.env.VITE_API_LOCAL_BACKEND;
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  console.log(currentUser);
   useEffect(() => {
     document.body.className = 'login-page';
     return () => {
